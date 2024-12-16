@@ -1,58 +1,51 @@
-const quadrato = document.getElementById('quadrato');
-const fotocellula = document.getElementById('fotocellula');
-const distanzaSpan = document.getElementById('distanza');
-const tempoSpan = document.getElementById('tempo');
-const startButton = document.getElementById('start');
-const posizioneFotocellulaInput = document.getElementById('posizioneFotocellula');
+const quadrato1 = document.getElementById('quadrato1');
+const fotocellula1 = document.getElementById('fotocellula1');
+const distanzaSpan1 = document.getElementById('distanza1');
+const tempoSpan1 = document.getElementById('tempo1');
+const startButton1 = document.getElementById('start1');
+const posizioneFotocellulaInput1 = document.getElementById('posizioneFotocellula1');
 
-const movimento = () => {
-    
+let posizione1 = 0;
+let tempo1 = 0;
+let intervallo1;
+let cronometro1;
+
+function aggiornaFotocellula1() {
+    const distanzaFotocellula1 = parseInt(posizioneFotocellulaInput1.value, 10);
+    fotocellula1.style.left = distanzaFotocellula1 + 'px';
 }
 
-let posizione = 0; // Posizione iniziale del quadrato
-let intervallo; // Per gestire l'animazione
-let tempo = 0; // Tempo trascorso
-let cronometro; // Per il timer
+function startAnimazione1() {
+    // Disabilita il pulsante "Inizia" durante l'animazione
+    startButton1.disabled = true;
 
-function aggiornaFotocellula() {
-    const distanzaFotocellula = parseInt(posizioneFotocellulaInput.value, 10);
-    fotocellula.style.left = distanzaFotocellula + 'px';
-}
+    posizione1 = 0;
+    tempo1 = 0;
+    quadrato1.style.left = '0px';
+    distanzaSpan1.textContent = '0';
+    tempoSpan1.textContent = '0.00';
 
-function startAnimazione() {
-    posizione = 0;
-    tempo = 0;
-    quadrato.style.left = '0px';
-    distanzaSpan.textContent = '0';
-    tempoSpan.textContent = '0.00';
+    aggiornaFotocellula1();
 
-    // Posiziona la fotocellula prima di avviare l'animazione
-    aggiornaFotocellula();
+    const distanzaFotocellula1 = parseInt(posizioneFotocellulaInput1.value, 10);
 
-    const distanzaFotocellula = parseInt(posizioneFotocellulaInput.value, 10);
-
-    // Avvia il cronometro
-    cronometro = setInterval(() => {
-        tempo += 0.01;
-        tempoSpan.textContent = tempo.toFixed(2);
+    cronometro1 = setInterval(() => {
+        tempo1 += 0.01;
+        tempoSpan1.textContent = tempo1.toFixed(2);
     }, 10);
 
-    // Avvia l'animazione
-    intervallo = setInterval(() => {
-        posizione += 2; // Incremento posizione
-        quadrato.style.left = posizione + 'px';
-        distanzaSpan.textContent = posizione;
+    intervallo1 = setInterval(() => {
+        posizione1 += 2;
+        quadrato1.style.left = posizione1 + 'px';
+        distanzaSpan1.textContent = posizione1;
 
-        // Controlla se il quadrato raggiunge la fotocellula
-        if (posizione >= distanzaFotocellula) {
-            clearInterval(intervallo); // Ferma l'animazione
-            clearInterval(cronometro); // Ferma il cronometro
+        if (posizione1 >= distanzaFotocellula1) {
+            clearInterval(intervallo1);
+            clearInterval(cronometro1);
+            startButton1.disabled = false; // Riabilita il pulsante alla fine dell'animazione
         }
     }, 10);
 }
 
-// Aggiorna la posizione della fotocellula in tempo reale
-posizioneFotocellulaInput.addEventListener('input', aggiornaFotocellula);
-
-// Avvia l'animazione al clic del pulsante
-startButton.addEventListener('click', startAnimazione);
+posizioneFotocellulaInput1.addEventListener('input', aggiornaFotocellula1);
+startButton1.addEventListener('click', startAnimazione1);
