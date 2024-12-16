@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+#titolo {
+    font-size: xx-large;
+    color: firebrick;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007acc;
+}
+
+a:hover {
+    color: #005f99;
+}
+
+/* Stili per la prima simulazione (MRU) */
+#binario1 {
+    position: relative;
+    width: 1000px;
+    height: 50px;
+    background-color: #ddd;
+    margin: 20px auto;
+    border: 1px solid #999;
+}
+
+#quadrato1 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    top: 10px;
+}
+
+#fotocellula1 {
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background-color: black;
+    right: 50px;
+}
+
+#metro1, #cronometro1 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Stili per la seconda simulazione (MRUA) */
+#binario2 {
+    position: relative;
+    width: 1000px;
+    height: 50px;
+    background-color: #e6e6e6;
+    margin: 20px auto;
+    border: 1px solid #888;
+}
+
+#quadrato2 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    top: 10px;
+}
+
+#fotocellula2 {
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background-color: black;
+    right: 50px;
+}
+
+#metro2, #cronometro2 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
