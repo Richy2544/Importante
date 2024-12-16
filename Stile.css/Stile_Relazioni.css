@@ -5,12 +5,14 @@ body {
     background-color: #f9f9f9;
     color: #333;
 }
+
 ul {
     list-style: none;
     padding: 0;
 }
+
 #titolo {
-    font-size:xx-large;
+    font-size: xx-large;
     color: firebrick;
 }
 
@@ -27,7 +29,8 @@ a:hover {
     color: #005f99;
 }
 
-#binario {
+/* Stili per la prima simulazione (MRU) */
+#binario1 {
     position: relative;
     width: 1000px;
     height: 50px;
@@ -36,7 +39,7 @@ a:hover {
     border: 1px solid #999;
 }
 
-#quadrato {
+#quadrato1 {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -44,36 +47,48 @@ a:hover {
     top: 10px;
 }
 
-#fotocellula {
+#fotocellula1 {
     position: absolute;
-    width: 2px; /* Linea sottile */
-    height: 50px; /* Altezza del binario */
+    width: 2px;
+    height: 50px;
     background-color: black;
-    right: 50px; /* Posizione sul lato destro */
+    right: 50px;
 }
 
-#metro, #cronometro {
+#metro1, #cronometro1 {
     text-align: center;
     margin-top: 10px;
     font-size: 16px;
 }
-/* Stile per la copertina */
-.cover {
+
+/* Stili per la seconda simulazione (MRUA) */
+#binario2 {
     position: relative;
-    width: 100%;
-    height: 50vh; /* Altezza della copertina */
-    background-image: url(../Immagini/DALL·E\ 2024-12-03\ 09.28.53\ -\ A\ dynamic\ and\ modern\ cover\ image\ with\ a\ scientific\ theme\ focused\ on\ physics\,\ incorporating\ elements\ like\ formulas\,\ a\ glowing\ atom\,\ abstract\ representa.jpg); /* Inserisci qui il link dell'immagine */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+    width: 1000px;
+    height: 50px;
+    background-color: #e6e6e6;
+    margin: 20px auto;
+    border: 1px solid #888;
 }
 
-.cover .title {
-    color: white;
-    font-size: 3em;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+#quadrato2 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    top: 10px;
+}
+
+#fotocellula2 {
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background-color: black;
+    right: 50px;
+}
+
+#metro2, #cronometro2 {
     text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
 }
